@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Lato:wght@700;900&display=swap" rel="stylesheet">
+  <title>BoredBot</title>
+</head>
+<body class="flex items-center h-screen bg-gray-300" style="font-family: 'Lato';">
+  <div class="flex-col items-center justify-center bg-white max-w-4xl w-full sm:w-96 sm:m-auto mx-4 rounded-2xl">
+    <p class="text-4xl text-center font-extrabold text-gray-500 py-6">Bored Bot</p>
+    <div class="flex gap-2">
+      <p class="pl-4 text-sm font-bold text-gray-500">Activity:</p>
+      <p id="type" class="text-sm font-bold text-gray-500 capitalize"></p>
+    </div>
+    <h3 id="activity" class="px-4 text-lg text-gray-600 py-2 font-semibold pb-4" style="font-family: 'Kalam';"></h3>
+
+    <div class="flex justify-center pt-4 pb-10">
+      <button onclick="generate()" class="bg-blue-300 py-3 px-10 text-sm font-bold rounded-lg text-gray-600">New Activity</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
