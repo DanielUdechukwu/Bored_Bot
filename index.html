@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Lato:wght@700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>BoredBot</title>
 </head>
 <body class="flex items-center h-screen bg-gray-300" style="font-family: 'Lato';">
@@ -19,8 +20,15 @@
     </div>
     <h3 id="activity" class="px-4 text-lg text-gray-600 py-2 font-semibold pb-4" style="font-family: 'Kalam';">Find Something to do</h3>
 
+    <div class="flex gap-2 items-center px-4">
+      <div id="img" class="bg-gray-300 w-16 h-16 rounded-full">
+      
+      </div>
+      <p id="description" class="text-sm capitalize text-gray-500"></p>
+    </div>
+
     <div class="flex justify-center pt-4 pb-10">
-      <button onclick="generate()" class="bg-blue-300 py-3 px-10 text-sm font-bold rounded-lg text-gray-600 hover:bg-blue-400 transition hover:duration-350">New Activity</button>
+      <button onclick="generate()" class="bg-blue-300 py-3 px-10 text-sm font-bold rounded-lg text-gray-600 hover:bg-blue-400 transition hover:duration-350 active:outline active:outline-offset-2 active:outline-1 active:outline-gray-200">New Activity</button>
     </div>
   </div>
 
