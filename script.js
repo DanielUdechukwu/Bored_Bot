@@ -24,7 +24,7 @@ function getValue() {
   if (location && userValue){
     userURL = `https://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
   }else{
-    userURL = ''
+    userURL = '';
   }
 
   axios.get(`${userURL}`)
