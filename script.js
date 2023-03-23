@@ -19,15 +19,15 @@
 function getValue() {
   const userValue = document.getElementById("location").value
   console.log(userValue)
-  let url;
+  let userURL;
 
   if (location && userValue){
-    url = `http://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
+    userURL = `http://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
   }else{
-    url = ''
+    userURL = ''
   }
 
-  axios.get(`${url}`)
+  axios.get(`${userURL}`)
     .then(response => {
       // console.log(response)
       const userLocationDescription = document.getElementById("custom-location-description")
