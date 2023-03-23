@@ -16,7 +16,38 @@
 //     })
 // })
 
-axios.get('https://api.openweathermap.org/data/2.5/weather?lon=6.974604&lat=4.8472226&units=metric&appid=22b3541a55542c8f6f9fe906196620ce')
+function getValue() {
+  const userValue = document.getElementById("location").value
+  console.log(userValue)
+  let url;
+
+  if (location && userValue){
+    url = `http://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
+  }else{
+    url = ''
+  }
+
+  axios.get(`${url}`)
+    .then(response => {
+      // console.log(response)
+      const userLocationDescription = document.getElementById("custom-location-description")
+      const userLocationImage = document.getElementById("custom-location-img")
+
+      const userLocationWeather = response.data.weather[0].description
+      const userLocationIcon = response.data.weather[0].icon
+      console.log(userLocationWeather)
+      console.log(userLocationIcon)
+      const userImageURL = `https://openweathermap.org/img/wn/${userLocationIcon}@2x.png`
+      userLocationImage.innerHTML = `<img src="${userImageURL}" />`
+      userLocationDescription.innerHTML = userLocationWeather
+    })
+}
+
+
+
+navigator.geolocation.getCurrentPosition(position => {
+  const url = `https://api.openweathermap.org/data/2.5/weather?lon=${position.coords.longitude}&lat=${position.coords.latitude}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`;
+  axios.get(`${url}`)
   .then(response => {
     console.log(response.data)
     let image = document.getElementById('img')
@@ -28,7 +59,7 @@ axios.get('https://api.openweathermap.org/data/2.5/weather?lon=6.974604&lat=4.84
     const weatherDetails = response.data.weather[0].description
     description.textContent = weatherDetails
   })
-
+})
 
 
 const generate = () =>{

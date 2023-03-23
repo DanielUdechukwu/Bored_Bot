@@ -20,11 +20,31 @@
     </div>
     <h3 id="activity" class="px-4 text-lg text-gray-600 py-2 font-semibold pb-4" style="font-family: 'Kalam';">Find Something to do</h3>
 
-    <div class="flex gap-2 items-center px-4">
-      <div id="img" class="bg-gray-300 w-16 h-16 rounded-full">
-      
+    <div class="md:flex px-4 gap-1">
+      <div class="w-1/2">
+        <p class="text-sm text-gray-500 py-1">Current Location</p>
+        <div class="flex gap-2 items-center">
+          <div id="img" class="bg-gray-300 w-16 h-16 rounded-full">
+        
+          </div>
+          <p id="description" class="text-sm capitalize text-gray-500"></p>
+        </div>
       </div>
-      <p id="description" class="text-sm capitalize text-gray-500"></p>
+
+      <div class="w-1/2">
+        <p class="text-sm text-gray-500 py-1">Searched Location</p>
+        <div class="flex gap-2 items-center">
+          <div id="custom-location-img" class="bg-gray-300 w-16 h-16 rounded-full">
+        
+          </div>
+          <p id="custom-location-description" class="text-sm capitalize text-gray-500"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 my-4">
+      <!-- <label for="location">Find Location</label> -->
+      <input type="text" name="location" id="location" class="w-full px-3  border-2 border-gray-500 outline-none h-10 rounded-md" oninput="getValue()">
     </div>
 
     <div class="flex justify-center pt-4 pb-10">
