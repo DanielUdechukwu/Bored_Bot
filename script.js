@@ -22,20 +22,19 @@ function getValue() {
   let userURL;
 
   if (location && userValue){
-    userURL = `http://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
+    userURL = `https://api.openweathermap.org/data/2.5/weather?q=${userValue}&units=metric&appid=22b3541a55542c8f6f9fe906196620ce`
   }else{
     userURL = ''
   }
 
-  fetch(`${userURL}`)
-    .then(response => response.json())
-    .then(data => {
+  axios.get(`${userURL}`)
+    .then(response => {
       // console.log(response)
       const userLocationDescription = document.getElementById("custom-location-description")
       const userLocationImage = document.getElementById("custom-location-img")
 
-      const userLocationWeather = data.weather[0].description
-      const userLocationIcon = data.weather[0].icon
+      const userLocationWeather = response.data.weather[0].description
+      const userLocationIcon = response.data.weather[0].icon
       console.log(userLocationWeather)
       console.log(userLocationIcon)
       const userImageURL = `https://openweathermap.org/img/wn/${userLocationIcon}@2x.png`
